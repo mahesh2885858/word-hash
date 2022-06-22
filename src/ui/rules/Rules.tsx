@@ -6,9 +6,10 @@ const Rules = () => {
     const contextData = useContext(Context)
     return (
         <div className=" absolute bg-gray-200/50 top-0 left-0 z-50 lg:h-full w-full h-[1030px] overflow-y-scroll   flex flex-col justify-center items-center">
-            <div className='flex flex-col shadow-2xl rounded-md justify-center items-center bg-white lg:w-1/2 w-3/4 p-4'>
+            <div className='flex flex-col shadow-2xl rounded-md justify-center items-center bg-white lg:w-[40%] w-3/4 p-4'>
 
-                <div className='flex flex-col gap-2' >
+                <div className='flex flex-col justify-center gap-2' >
+                    <h1 className='mx-auto text-black'>Rules Of The Game</h1>
                     <li>  You have six guesses to find the word.
                     </li>
                     <li>The word may be a proper noun. </li>
@@ -21,7 +22,7 @@ const Rules = () => {
                     <li>Collect up to four clues on social media to help you find the word.</li>
                 </div>
                 <div className='flex justify-center items-center ' >
-                    <button className='p-2' onClick={() => contextData?.dispatch({ type: actionsWords.toggleRules, data: "" })}>Close</button>
+                    <button className='p-2 bg-[#39853c] text-white rounded-[5px] mt-4' onClick={() => contextData?.dispatch({ type: actionsWords.toggleRules, data: "" })}>Close</button>
                 </div>
             </div>
         </div>
