@@ -32,7 +32,7 @@ const CheckingTheWord = (
   state.board[state.currentAttempt].letters.forEach((letter) => {
     testWord = testWord.concat(letter.value);
   });
-  if (state.wordBank.has(testWord.toLowerCase())) {
+  if (state.wordBank.has(testWord.toLowerCase()) || testWord.toLowerCase() === state.correctWord.toLowerCase()) {
 
     if (countOfMatchedLetters === state.correctWord.length) {
 
