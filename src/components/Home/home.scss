@@ -1,0 +1,84 @@
+.logo{
+    // font-family: 'Nunito', sans-serif;
+    font-size: 40px;  
+    // background: linear-gradient(180deg,#4cdd92,#7de17f);
+    background: linear-gradient(180deg,#4cdd92,#69b86a);
+    // near-gradient(180deg,#4cdd92,#7de17f)
+    padding:10px;
+    padding-top:20px;
+    margin-bottom: 0;
+    height: 120px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+
+
+
+    .circle2{
+        display:unset;
+
+        background: white;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        right: 0;
+        margin-right: -55px;
+        bottom: -50px;
+        z-index: 1;
+        opacity: 0.3;
+    }
+    .circle1{
+        display:unset;
+
+        background: white;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        right: 0;
+        margin-right: -55px;
+        top: -50px;
+        z-index: 1;
+        opacity: 0.2;
+    }
+    .circle3{
+        display:unset;
+
+        background: white;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 0;
+        margin-left: -48px;
+        bottom: -48px;
+        opacity: 0.3;
+    }
+    .circle4{
+        background: white;
+        display:unset;
+
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        left: 0;
+        margin-left: -55px;
+        top: -50px;
+        opacity: 0.2;
+        // color:#62c094
+    }
+ 
+
+}
+@media screen and (min-width:1024px) {
+    .logo{
+//    background: unset;
+   padding:0;
+   
+    }
+      
+  }

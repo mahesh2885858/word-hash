@@ -1,0 +1,30 @@
+{
+  "short_name": "Wordhash",
+  "name": "Wordhash",
+  "icons": [
+    {
+      "src": "wordhash-icon-64x64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "wordhash-icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "wordhash-icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "wordhash-icon-72x72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,64 @@
+.keyboard-container {
+  display: flex;
+  margin: 0.25em auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  .keyboard-row {
+    display: flex;
+    flex-direction: row;
+    gap: 0.25em;
+  
+    .keyboard-letter {
+      //   padding: 0.5em;
+      height: 40px;
+      width: 32px;
+      font-size: 1.25rem;
+      // padding: 5px;
+      display: flex;
+      //   border: blue solid;
+      background-color: #059ff9;
+      background: linear-gradient(to bottom,#47d4aa,#8ddb90, );
+      // bg-gradient-to-br text-center from-[#059ff9] to-[#4bcfff]
+      border-radius: 2px;
+      align-items: center;
+      // padding: 5px;
+      justify-content: center;
+      box-shadow: 2px 2px 2px rgb(35, 34, 34);
+      transition:all 0.3s ease-in-out ;
+      text-transform: uppercase;
+
+    }
+    .keyboard-letter:hover{
+      transform: scale(1.1);
+      transition:all 0.3s ease-in-out ;
+    }
+  }
+}
+.button-container {
+  display: flex;
+  gap: 1em;
+  .check-button {
+    font-size: 1.2rem;
+    padding: 0.25em;
+    width: 100px;
+  }
+}
+@media screen and (min-width:1024px) {
+  .keyboard-button-container{
+    display: none;
+  }
+    .keyboard-container{
+        display: none;
+    }
+    .button-container{
+      // position:absolute;
+      // bottom:-50px;
+      // right: 90px;
+      margin-right: 25px;
+      // border:solid red;
+      margin-top: -40px;
+      padding-bottom: 15px;
+    }
+    
+}

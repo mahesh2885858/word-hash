@@ -1,0 +1,5 @@
+10 letters to guess from - background - #63d7a0
+
+Header color gradient - top color- #47d4aa, bottom - #8ddb90
+Type in cells - border - #cccccc, correct letter - border - #009f06, error - background color - #ff7b63
+Submit button - background color - #39853c.
