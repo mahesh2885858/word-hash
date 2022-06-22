@@ -9,7 +9,7 @@ const Rules = () => {
             <div className='flex flex-col shadow-2xl rounded-md justify-center items-center bg-white lg:w-[40%] w-3/4 p-4'>
 
                 <div className='flex flex-col justify-center gap-2' >
-                    <h1 className='mx-auto text-black'>Rules Of The Game</h1>
+                    <h1 className='mx-auto text-black text-xl'>Rules Of The Game</h1>
                     <li>  You have six guesses to find the word.
                     </li>
                     <li>The word may be a proper noun. </li>
