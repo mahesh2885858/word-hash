@@ -1,6 +1,10 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+
   theme: {
+    screens: {
+      'mob': { 'max': '1024px' }
+    },
     extend: {
       keyframes: {
         scaleup: {

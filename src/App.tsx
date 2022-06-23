@@ -11,6 +11,7 @@ import GetTodaysWord from "./utils/GetTodaysWord"
 import AdminLogin from "./admin/adminLogin/AdminLogin";
 import AdminInner from "./admin/adminLogin/AdminInner";
 import GetRadmonWordOfTheDay from "./utils/GetRandomWordOfTheDay"
+import Cookies from "js-cookie"
 import moment from "moment";
 import Result from "./components/Result/Result";
 import CheckingTheWord from "./utils/checkingTheWord";
@@ -73,6 +74,8 @@ const App: React.FC = () => {
     setCookie("v1", contextData?.state, {
       path: "/",
     });
+    Cookies.set('V2', JSON.stringify(contextData?.state), { path: "/", expires: 1 })
+
   }, [
     // eslint-disable-line react-hooks/exhaustive-deps
     contextData?.state.gameStatus,
@@ -85,6 +88,7 @@ const App: React.FC = () => {
     // contextData?.state.secondaryTimer
   ]); // eslint-disable-line react-hooks/exhaustive-deps
   const getCookies = (state: stateType) => {
+    console.log(state)
     contextData?.dispatch({
       type: actionsWords.getcookiess,
       data: "",
@@ -93,7 +97,9 @@ const App: React.FC = () => {
   };
   useEffect(() => {
     // getting state stored in cookies
-    getCookies(cookies.v1);
+    // getCookies(cookies.v1);
+    getCookies(JSON.parse(Cookies.get("V2")!));
+    // console.log(JSON.parse(Cookies.get('V2')!))
     GetTheWords().then((words) => {
       contextData?.dispatch({
         type: actionsWords.getWordBank,

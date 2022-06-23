@@ -20,7 +20,7 @@ const Letters: React.FC = () => {
       <div className="lg:rounded-xl items-center justify-center lg:shadow relative overflow-hidden flex flex-col lg:gap-[0.5rem]  gap-4 sm:rounded-0 relative px-8 lg:py-10 py-4    letters-container">
         {/* <div className="circle1"></div> */}
         {/* <div className="circle2"></div> */}
-        {contextData?.state.todayTenLetters.length! > 0 ? <>
+        {contextData?.state.todayTenLetters.length! > 0 && contextData?.state.wordBank.size! > 0 ? <>
           <div className="flex relative z-10 justify-center  w-full gap-4 lg:gap-2">
             {topArray!.map((letter, index) => {
               return (
@@ -68,7 +68,7 @@ const Letters: React.FC = () => {
                 data: "",
               });
             }}
-            className="mx-auto bg-[#009f06] p-[10px] lg:mt-4 rounded-md text-white "
+            className="mx-auto bg-[#009f06] p-[10px] mob:py-[6px] lg:mt-4 rounded-md text-white "
           >
             Hint
           </button>
@@ -81,7 +81,7 @@ const Letters: React.FC = () => {
             });
           }}
 
-          className="mx-auto bg-[#009f06] p-[10px] lg:mt-4 rounded-md text-white "
+          className="mx-auto bg-[#009f06] p-[10px] mob:py-[6px] lg:mt-4 rounded-md text-white "
         >
           Rules
         </button>
