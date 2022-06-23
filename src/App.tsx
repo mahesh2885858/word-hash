@@ -16,8 +16,8 @@ import moment from "moment";
 import Result from "./components/Result/Result";
 import CheckingTheWord from "./utils/checkingTheWord";
 import GetRandomWordOfTheDay from "./utils/GetRandomWordOfTheDay";
-// export const ServerPort = "http://localhost:6237";
-export const ServerPort = "https://mb2212.vanillanetworks.co.in";
+export const ServerPort = "http://localhost:6237";
+// export const ServerPort = "https://mb2212.vanillanetworks.co.in";
 const App: React.FC = () => {
   const contextData = useContext(Context);
 
@@ -56,6 +56,7 @@ const App: React.FC = () => {
 
 
   useEffect(() => {
+
     contextData?.dispatch({
       type: actionsWords.setTimer,
       data: "",
@@ -70,35 +71,20 @@ const App: React.FC = () => {
     return () => clearInterval(timeInterval);
   }, [contextData?.state.timer]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  useEffect(() => {
-    setCookie("v1", contextData?.state, {
-      path: "/",
-    });
-    Cookies.set('V2', JSON.stringify(contextData?.state), { path: "/", expires: 1 })
-
-  }, [
-    // eslint-disable-line react-hooks/exhaustive-deps
-    contextData?.state.gameStatus,
-    contextData?.state.currentAttempt,
-    contextData?.state.correctWord,
-    contextData?.state.todayTenLetters,
-    contextData?.state.clueCardsShown,
-    contextData?.state.showClueCardModal,
-    contextData?.state.currentMode,
-    // contextData?.state.secondaryTimer
-  ]); // eslint-disable-line react-hooks/exhaustive-deps
   const getCookies = (state: stateType) => {
-    console.log(state)
     contextData?.dispatch({
       type: actionsWords.getcookiess,
       data: "",
       cookieState: state,
     });
   };
+
   useEffect(() => {
     // getting state stored in cookies
     // getCookies(cookies.v1);
-    getCookies(JSON.parse(Cookies.get("V2")!));
+    const cookieState = Cookies.get("V2") === undefined ? contextData?.state : JSON.parse(Cookies.get("V2")!)
+    getCookies(cookieState);
+    // getCookies(JSON.parse(localStorage.getItem("state")!))
     // console.log(JSON.parse(Cookies.get('V2')!))
     GetTheWords().then((words) => {
       contextData?.dispatch({
@@ -122,6 +108,27 @@ const App: React.FC = () => {
 
 
   }, []);
+  // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    setCookie("v1", contextData?.state, {
+      path: "/",
+    });
+    // console.log(Cookies.get("V2"))
+    // const CookieStateCheck = Cookies.get("V2") === undefined ? contextData?.state : JSON.parse(Cookies.get("V2")!)
+    Cookies.set('V2', JSON.stringify(contextData?.state), { path: "/", expires: 1 })
+    // localStorage.setItem("state", JSON.stringify(contextData?.state))
+
+  }, [
+    // eslint-disable-line react-hooks/exhaustive-deps
+    contextData?.state.gameStatus,
+    contextData?.state.currentAttempt,
+    contextData?.state.correctWord,
+    contextData?.state.todayTenLetters,
+    contextData?.state.clueCardsShown,
+    contextData?.state.showClueCardModal,
+    contextData?.state.currentMode,
+    // contextData?.state.secondaryTimer
+  ]);
   // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (contextData?.state.nextWordTimer === 0 && contextData.state.currentMode === "secondary") {
