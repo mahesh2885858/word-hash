@@ -16,8 +16,8 @@ import moment from "moment";
 import Result from "./components/Result/Result";
 import CheckingTheWord from "./utils/checkingTheWord";
 import GetRandomWordOfTheDay from "./utils/GetRandomWordOfTheDay";
-export const ServerPort = "http://localhost:6237";
-// export const ServerPort = "https://mb2212.vanillanetworks.co.in";
+// export const ServerPort = "http://localhost:6237";
+export const ServerPort = "https://mb2212.vanillanetworks.co.in";
 const App: React.FC = () => {
   const contextData = useContext(Context);
 
