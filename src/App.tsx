@@ -115,7 +115,7 @@ const App: React.FC = () => {
     });
     // console.log(Cookies.get("V2"))
     // const CookieStateCheck = Cookies.get("V2") === undefined ? contextData?.state : JSON.parse(Cookies.get("V2")!)
-    Cookies.set('V2', JSON.stringify(contextData?.state), { path: "/", expires: 1 })
+    Cookies.set('V2', JSON.stringify(contextData?.state), { path: "/", expires: 365 })
     // localStorage.setItem("state", JSON.stringify(contextData?.state))
 
   }, [
